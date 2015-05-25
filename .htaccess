@@ -1,0 +1,7 @@
+Options +FollowSymlinks
+RewriteEngine on
+RewriteRule ^/choice$ /choice.php [NC]
+RewriteRule ^login/([0-9]+)$ login.php?id=$1 [NC]
+RewriteRule ^wheel/([0-9]+)$ wheel.php?id=$1 [NC]
+RewriteRule ^users/([0-9]+)$ users.php?id=$1 [NC]
+RewriteRule ^saved/([0-9]+)$ saved.php?id=$1 [NC]

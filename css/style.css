@@ -1,0 +1,65 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 8-mag-2015, 19.37.22
+    Author     : lorenzo.lombardi
+*/
+
+body { 
+        /*background: url(../img/bkgr.jpg) no-repeat top center fixed; */
+        /*-webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;*/
+        /*background-repeat: no-repeat;
+        background-size: 100% auto;*/
+        background-color: white;
+        font-family: 'Roboto Condensed', sans-serif;
+}
+html {font-family: 'Roboto Condensed', sans-serif;}
+h1,h2,h3,h4,h5,p,span,div,b,u,i,strong,label{font-family: 'Roboto Condensed', sans-serif;}
+/*@media only screen and (max-width: 1000px){
+    #wlcm-msg { margin-left: 200px; }
+}
+@media only screen and (max-width: 800px){
+    #wlcm-msg { margin-left: 100px; }
+}*/
+.mainbody{
+        background:black;
+        margin: 0 auto;
+        color:white;
+}
+.home-center{
+        padding-top: 20%;
+        min-height: 900px;
+        background: url(../img/bg.jpg) no-repeat top center;
+}
+.home-center h1{
+        color:white;
+}
+.choice{
+        padding-top: 5%;
+        min-height: 900px;
+}
+/* common styles */
+.thumb{
+        height:250px;
+        width:auto;
+}
+.center{
+        margin:0 auto;
+        text-align: center;
+}
+.redborder{
+        border:1px solid red;
+}
+.blueborder{
+        border:1px solid #005599;
+}
+.txt-center{text-align: center;}
+.txt-white{
+        color:white;
+}
