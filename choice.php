@@ -79,8 +79,7 @@ include 'classes/langs.php';
 								PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 							));
 							$result = $db->query('SELECT * FROM tarots');
-							//print_r($result);
-							//exit;
+							//print_r($result);exit;
 							foreach($result as $row){
 								//echo '<img class="th thumb" src="img/'.$row['pict'].'" />';
 								echo '<li><img class="th thumb" data-caption="img/'.$row['tname'].'" src="img/'.$row['pict'].'">'

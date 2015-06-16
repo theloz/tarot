@@ -1,5 +1,11 @@
 <?php
 include 'classes/langs.php';
+if (!filter_var(@$_GET['err'], FILTER_VALIDATE_INT) === false) {
+	$err = @$_GET['err'];
+}
+else{
+	$err = 0;
+}
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -29,27 +35,28 @@ include 'classes/langs.php';
 	</div>
 	<div class="container">
 		<div class="row mainbody">
+			<?php echo seterrors($err) ?>
 			<div class="row" style="margin-top: 20px;">
 				<div class="small-4 small-offset-4 columns">
-				<form action="__setsubscribe.php">
+					<form action="__setsubscribe.php" method="post">
 					<div class="small-12 columns">
 						<label class="txt-white"><?php echo $l['comm']['email']?> *
-							<input name="email" type="email" placeholder="tarotplayer@null.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required="required" />
+							<input name="email" type="email" placeholder="tarotplayer@null.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required="required" title="<?php echo $l['subs']['mailpattern']?>" value="<?php echo ( (isset($_GET['em'])) ? $_GET['em']: '' )?>" />
 						</label>
 					</div>
 					<div class="small-12 columns">
 						<label class="txt-white"><?php echo $l['comm']['password']?> *
-							<input name="pwd" type="password" placeholder="" pattern=".{6,8}" title="<?php echo $l['subs']['empattern']?>" required="required" />
+							<input name="pwd" type="password" placeholder="" pattern=".{6,10}" title="<?php echo $l['subs']['empattern']?>" required="required" />
 						</label>
 					</div>
 					<div class="small-12 columns">
 						<label class="txt-white"><?php echo $l['comm']['password']?> (<?php echo $l['comm']['again']?>) *
-							<input name="pwd2" type="password" placeholder="" pattern=".{6,8}" title="<?php echo $l['subs']['empattern']?>" required="required" />
+							<input name="pwd2" type="password" placeholder="" pattern=".{6,10}" title="<?php echo $l['subs']['empattern']?>" required="required" />
 						</label>
 					</div>
 					<div class="small-12 columns">
 						<label class="txt-white"><?php echo $l['comm']['nick']?> (<?php echo $l['comm']['opt']?>)
-							<input name="nick" type="text" placeholder="" pattern="[A-Za-z0-9]{4,10}" title="<?php echo $l['subs']['nickpattern']?>" />
+							<input name="nick" type="text" placeholder="" pattern="[A-Za-z0-9]{4,15}" title="<?php echo $l['subs']['nickpattern']?>" value="<?php echo ( (isset($_GET['ni'])) ? $_GET['ni']: '' )?>" />
 						</label>
 					</div>
 					<div class="small-8 small-offset-6 columns"><button type="submit" class="button small tarotbutton"><?php echo $l['comm']['send']?></button></div>
@@ -60,3 +67,20 @@ include 'classes/langs.php';
 	</div>
   </body>
 </html>
+<?php
+function seterrors($err){
+	global $l;
+	if($err==0){
+		return '';
+	}
+	else{
+		return '<div class="small-12 columns">'
+			. '<div data-alert class="alert-box alert radius txt-center" id="msg'.$err.'">
+				'.$l['subs']['err'.$err].'
+			<a href="#" class="close">&times;</a>
+			</div>
+			</div>';
+		
+	}
+}
+?>

@@ -47,5 +47,13 @@ $l['saved']['button'] = 'Please, Enter';
 
 //subscribe
 $l['subs']['button'] = 'Please, Enter';
-$l['subs']['empattern'] = 'Must contain 6 to 8 characters';
-$l['subs']['nickpattern'] = 'Only numbers and letters, from 4 digits to 10';
+$l['subs']['mailpattern'] = 'Please enter a valid email';
+$l['subs']['empattern'] = 'Must contain 6 to 10 characters';
+$l['subs']['nickpattern'] = 'Only numbers and letters, from 4 digits to 10. If empty, first part of email will be choose';
+$l['subs']['err1'] = 'Username exists, please use another';
+$l['subs']['err2'] = 'Existing nick, please choose another';
+$l['subs']['err3'] = 'Passwords dont\'t match';
+$l['subs']['err4'] = 'Password isn\'t strong enough. Limits are 6 to 10 character';
+$l['subs']['err5'] = 'Email/Username not valid';
+$l['subs']['err6'] = 'Password not valid';
+$l['subs']['err7'] = 'Nickname not valid';
